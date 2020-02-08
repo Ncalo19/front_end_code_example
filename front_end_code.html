@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--HTML object (so is body, ul (unordered list), and p (paragraph)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Frontend Dev Course</title> <!--website title-->
+    <link rel="stylesheet" href="main.css"> <!--connects the css document-->
+</head>
+<body>
+    <div class="container"> <!--div element: defines a division (section)-->
+        <header> <!--sets the header of the website-->
+            <img src="images/logo.svg" alt="23andfour logo" class="logo">
+            <!--svg: vector graphic-->
+            <!--alt: displayed as an alternate when the browser cannot open the image-->
+            <!--class allows you to style the img in css-->
+            <nav> <!--semantic tag: good for html organization (navigation bar)-->
+                <a href="#" class="hide-desktop"> <!--href: connects a link going to nowhere (#). Replace # to connect a real link-->
+                <!--class set to hide desktop because you want to hide the hamburger when using desktop-->
+                    <img src="images/ham.svg" alt="toggle menu" class="menu" id="menu">
+                    <!--id: to attach a diff class with javascript-->
+                </a>
+                <ul class="show-desktop hide-mobile" id="nav"> <!--unordered list-->
+                    <li id="exit" class="exit-btn hide-desktop"> <!--list item (adds a bullet point)-->
+                        <img src="images/exit.svg" alt="exit menu"> <!--x to exit menu-->
+                    </li>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <img src="images/server.svg" alt="server graphic" class="server">
+
+            <h1>Web Hosting for the Modern Era</h1> <!--heading tag-->
+            <p class="subhead">Go serverless and pay only for what you use.</p> <!--paragraph element-->
+
+            <img src="images/scroll.svg" alt="scroll down" class="scroll hide-mobile show-desktop">
+        </section>
+    </div>
+
+    <div class="blue-container">
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="images/icon-1.svg" alt="Calendar icon">
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+                </li>
+                <li>
+                    <img src="images/icon-2.svg" alt="Calendar icon">
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+                </li>
+                <li>
+                    <img src="images/icon-3.svg" alt="Calendar icon">
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="gray-container">
+        <div class="container">
+            <ul>
+                <li>
+                  <figure> <!--semantic element (like nav)-->
+                      <img src="images/user1.png" alt="User testimonial picture">
+                      <blockquote>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas tenetur totam, dolore</blockquote>
+                      <!--adds a text block (block quote)-->
+                      <figcaption>- Jane Doe</figcaption> <!--html element that differentiates itself from the blockquote-->
+                  </figure>
+              </li>
+              <li>
+                  <figure>
+                      <img src="images/user2.png" alt="User testimonial picture">
+                      <blockquote>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas tenetur totam, dolore</blockquote>
+                      <figcaption>- John Doe</figcaption>
+                  </figure>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+    <div class="container">
+        <h2>Start your free trial now!</h2>
+        <a href="#" class="cta">Get Started</a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="container">
+                <a href="#">
+                    <img src="images/logo-white.svg" class="logo" alt="logo">
+                </a>
+                <p class="address">Melrose Place, 90210<br>USA</p>
+                <ul class="footer-links">
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <script> //javascript
+
+        var menu = document.getElementById('menu'); //sets var menu to the html id menu
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e) { //waits for the click event
+            nav.classList.toggle('hide-mobile'); //toggles the hide mobile classlist in the nav id
+            //removes hidemobile(display none (referring to the side panel menu after clicking hamburger)))
+            //shows the hidden side panel
+            e.preventDefault(); //not sure what this does honestly
+        });
+
+        exit.addEventListener('click', function(e) {
+            nav.classList.add('hide-mobile'); //returns hidemobile (displays: none)
+            e.preventDefault();
+        });
+
+    </script>
+
+</body>
+</html>
